@@ -137,13 +137,78 @@ CREATE TABLE actors (
 
 CREATE TABLE characters (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  character TEXT,
+  character_name TEXT,
   actor_id INTEGER,
   movie_id INTEGER
 );
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
+INSERT INTO movies (
+  title,
+  release_year,
+  mpaa,
+  studio_id
+)
+VALUES 
+("Batman Begins", 2005, "PG-13",1),
+("The Dark Knight", 2008, "PG-13", 1),
+("The Dark Knight Rises", 2012, "PG-13", 1);
 
+INSERT INTO studio_produced_movies (
+  movie_id,
+  studio_id
+)
+VALUES 
+(1,1),
+(2,1),
+(3,1);
+
+INSERT INTO studios (
+  name
+)
+VALUES 
+("Warner Bros.");
+
+INSERT INTO actors (
+  name
+)
+VALUES 
+("Christian Bale"),
+("Michael Caine"),
+("Liam Neeson"),
+("Katie Holmes"),
+("Gary Oldman"),
+("Heath Ledger"),
+("Aaron Eckhart"),
+("Maggie Gyllenhaal"),
+("Tom Hardy"),
+("Joseph Gordon-Levitt"),
+("Anne Hathaway");
+
+
+INSERT INTO characters (
+  character_name,
+  actor_id,
+  movie_id
+)
+VALUES
+("Bruce Wayne", 1, 1),
+("Alfred", 2, 1),
+("Ra's Al Ghul", 3, 1),
+("Rachel Dawes", 4, 1),
+("Commissioner", 5, 1),
+("Bruce Wayne", 1, 2),
+("Joker", 6, 2),
+("Harvey Dent", 7, 2),
+("Alfred", 2, 2),
+("Rachel Dawes", 8, 2),
+("Bruce Wayne", 1, 3),
+("Commissioner", 5, 3),
+("Bane", 9, 3),
+("John Blake", 10, 3),
+("Selina Kyle", 11, 3);
+
+ 
 
 -- Prints a header for the movies output
 .print "Movies"
