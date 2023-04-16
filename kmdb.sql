@@ -216,7 +216,8 @@ VALUES
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+
+SELECT * FROM movies;
 
 -- Prints a header for the cast output
 .print ""
@@ -226,4 +227,4 @@ VALUES
 
 
 -- The SQL statement for the cast output
--- TODO!
+
