@@ -217,7 +217,10 @@ VALUES
 
 -- The SQL statement for the movies output
 
-SELECT * FROM movies;
+SELECT movies.title, movies.release_year, movies.mpaa, studios.name
+FROM movies
+JOIN studios
+ON movies.studio_id=studios.id;
 
 -- Prints a header for the cast output
 .print ""
@@ -228,3 +231,9 @@ SELECT * FROM movies;
 
 -- The SQL statement for the cast output
 
+SELECT movies.title, actors.name, characters.character_name
+FROM movies
+JOIN characters
+ON movies.id = characters.movie_id
+JOIN actors
+ON actors.id = characters.actor_id;
